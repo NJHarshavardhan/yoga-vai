@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mindful Movement — Joyful Yoga for Children</title>
+<meta name="description" content="Joyful Yoga for Children by Mindful Movement. Online classes for ages 6–14, guided by certified yoga and wellness therapists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-orb">
+    <div class="preloader-ring r1"></div>
+    <div class="preloader-ring r2"></div>
+    <div class="preloader-ring r3"></div>
+  </div>
+  <div class="preloader-word">
+    <span>M</span><span>i</span><span>n</span><span>d</span><span>f</span><span>u</span><span>l</span><span class="pw-space"></span><span>M</span><span>o</span><span>v</span><span>e</span><span>m</span><span>e</span><span>n</span><span>t</span>
+  </div>
+  <div class="preloader-sub">pause&nbsp;&nbsp;·&nbsp;&nbsp;breathe&nbsp;&nbsp;·&nbsp;&nbsp;heal</div>
+  <div class="preloader-bar"><span id="preloader-bar-fill"></span></div>
+</div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ============ 3D CANVAS ============ -->
+<canvas id="webgl"></canvas>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav" id="siteNav">
+  <a href="#top" class="nav-logo">
+    <span class="nav-logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="30" height="30">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="20" cy="14" r="4" fill="currentColor"/>
+        <path d="M20 18 C12 22, 10 30, 10 34 L30 34 C30 30, 28 22, 20 18 Z" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="nav-logo-text">Mindful&nbsp;Movement</span>
+  </a>
+
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#about" data-hover>About</a>
+    <a href="#poses" data-hover>Poses</a>
+    <a href="#benefits" data-hover>Benefits</a>
+    <a href="#experience" data-hover>Experience</a>
+    <a href="#class" data-hover>Class</a>
+    <a href="#contact" data-hover>Contact</a>
+  </nav>
+
+  <a href="#class" class="nav-join btn-magnetic" data-hover>
+    <span class="btn-text">Join a class</span>
+    <span class="btn-arrow">→</span>
+  </a>
+
+  <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+    <span></span><span></span>
+  </button>
+  <nav class="mobile-menu-links">
+    <a href="#about" data-idx="01">About</a>
+    <a href="#poses" data-idx="02">Poses</a>
+    <a href="#benefits" data-idx="03">Benefits</a>
+    <a href="#experience" data-idx="04">Experience</a>
+    <a href="#class" data-idx="05">Class</a>
+    <a href="#contact" data-idx="06">Contact</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <span>78456&#8209;22033</span>
+    <span>70946&#8209;55781</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <p class="hero-eyebrow reveal-item">Joyful Yoga for Children · Ages 6–14</p>
+
+      <h1 class="hero-title">
+        <span class="line" data-line="1"><span class="reveal-char">A</span> <span class="reveal-char">calmer</span></span>
+        <span class="line" data-line="2"><span class="reveal-char">child</span> <span class="reveal-char">begins</span></span>
+        <span class="line line-accent" data-line="3"><span class="reveal-char">with</span> <span class="reveal-char">one</span> <span class="reveal-char">breath.</span></span>
+      </h1>
+
+      <p class="hero-copy reveal-item">
+        A gentle, guided journey of movement and breath — built for young minds and bodies, taught live online by Mindful Movement.
+      </p>
+
+      <div class="hero-actions reveal-item">
+        <a href="#class" class="btn-primary btn-magnetic" data-hover>
+          <span class="btn-text">Reserve a spot</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#experience" class="btn-ghost" data-hover>
+          <span>Feel the breath</span>
+        </a>
+      </div>
+
+      <dl class="hero-meta reveal-item">
+        <div><dt>Starts</dt><dd>September 2nd</dd></div>
+        <div><dt>Time</dt><dd>5:30 – 6:15 PM</dd></div>
+        <div><dt>Where</dt><dd>Online · Google Meet</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero-figure" aria-hidden="true">
+      <svg viewBox="0 0 300 340" class="hero-figure-svg" id="heroFigureSvg">
+        <ellipse cx="150" cy="300" rx="95" ry="14" class="fig-shadow"/>
+        <path class="fig-lotus" d="M150 60 C120 30 90 40 80 70 C70 100 90 120 110 128 C90 135 78 158 88 182 C98 206 122 210 140 198 C136 220 148 240 150 240 C152 240 164 220 160 198 C178 210 202 206 212 182 C222 158 210 135 190 128 C210 120 230 100 220 70 C210 40 180 30 150 60 Z"/>
+        <g class="fig-body">
+          <circle cx="150" cy="118" r="17" class="fig-head"/>
+          <path d="M150 135 C120 140 102 165 100 195 C99 215 108 232 150 236 C192 232 201 215 200 195 C198 165 180 140 150 135 Z" class="fig-torso"/>
+          <path d="M100 195 C60 205 44 240 96 250 C112 253 118 240 108 228 C102 220 102 208 100 195 Z" class="fig-arm-l"/>
+          <path d="M200 195 C240 205 256 240 204 250 C188 253 182 240 192 228 C198 220 198 208 200 195 Z" class="fig-arm-r"/>
+          <path d="M150 232 C110 236 60 250 60 268 C60 282 120 286 150 286 C180 286 240 282 240 268 C240 250 190 236 150 232 Z" class="fig-legs"/>
+        </g>
+      </svg>
+      <div class="hero-figure-glow"></div>
+    </div>
+
+    <button class="scroll-cue" id="scrollCue" aria-label="Scroll to explore">
+      <span class="scroll-cue-line"><span></span></span>
+      <span class="scroll-cue-text">scroll</span>
+    </button>
+  </section>
+
+  <!-- ============ 01 ABOUT / INTRO ============ -->
+  <section class="section about" id="about">
+    <div class="section-head">
+      <span class="section-num">01 — Yoga, for the young</span>
+      <h2 class="section-title reveal-up">More than exercise. <em>A first practice</em> of stillness.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-lead reveal-up">
+        <p>
+          Yoga is a journey through movement, breath, strength, flexibility, balance and mindfulness — and for children, it's often the gentlest introduction to all five. Mindful Movement built the Joyful Yoga programme to give kids a real, embodied sense of calm before the day asks too much of them.
+        </p>
+      </div>
+      <ul class="about-facts">
+        <li class="reveal-up"><span class="af-label">Age group</span><span class="af-value">6 to 14 years</span></li>
+        <li class="reveal-up"><span class="af-label">Format</span><span class="af-value">Live, online — Google Meet</span></li>
+        <li class="reveal-up"><span class="af-label">Session</span><span class="af-value">5:30 – 6:15 PM, daily class</span></li>
+        <li class="reveal-up"><span class="af-label">Guided by</span><span class="af-value">Certified yoga &amp; wellness therapists</span></li>
+      </ul>
+    </div>
+
+    <div class="about-learn">
+      <p class="about-learn-label reveal-up">What children learn</p>
+      <div class="learn-row">
+        <div class="learn-item reveal-up">
+          <span class="learn-mark">＋</span>
+          <p>Intellectual training &amp; mindful activities</p>
+        </div>
+        <div class="learn-item reveal-up">
+          <span class="learn-mark">＋</span>
+          <p>Flexibility &amp; mobility exercises</p>
+        </div>
+        <div class="learn-item reveal-up">
+          <span class="learn-mark">＋</span>
+          <p>Breath &amp; coordinated movement</p>
+        </div>
+        <div class="learn-item reveal-up">
+          <span class="learn-mark">＋</span>
+          <p>Simple pranayama techniques</p>
+        </div>
+        <div class="learn-item reveal-up">
+          <span class="learn-mark">＋</span>
+          <p>Simple meditation techniques</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 BREATHING EXPERIENCE ============ -->
+  <section class="section breathing" id="breathe">
+    <div class="section-head light">
+      <span class="section-num">02 — The breath</span>
+      <h2 class="section-title reveal-up">Before we move, <em>we breathe.</em></h2>
+      <p class="breathing-copy reveal-up">Every class begins here. Try it now — inhale as the orb grows, hold, then let it go.</p>
+    </div>
+
+    <div class="breathing-stage">
+      <div class="breath-orb-wrap">
+        <div class="breath-ring ring1"></div>
+        <div class="breath-ring ring2"></div>
+        <div class="breath-orb" id="breathOrb">
+          <span class="breath-word" id="breathWord">Begin</span>
+        </div>
+      </div>
+
+      <div class="breathing-controls">
+        <button class="breath-btn btn-magnetic" id="breathToggle" data-hover>
+          <span class="btn-text">Start breathing</span>
+        </button>
+        <div class="breath-phases">
+          <span data-phase="inhale">Inhale</span>
+          <span data-phase="hold">Hold</span>
+          <span data-phase="exhale">Exhale</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 POSES ============ -->
+  <section class="section poses" id="poses">
+    <div class="section-head">
+      <span class="section-num">03 — The poses</span>
+      <h2 class="section-title reveal-up">Six shapes, <em>one steady body.</em></h2>
+      <p class="poses-copy reveal-up">Foundational asanas taught in the children's programme — simple enough to learn in one class, deep enough to practise for years.</p>
+    </div>
+
+    <div class="poses-stage">
+      <div class="poses-list" id="posesList">
+        <!-- injected by JS -->
+      </div>
+
+      <div class="pose-display">
+        <span class="pose-display-num" id="poseNum">01</span>
+        <div class="pose-display-fig" id="poseFig" aria-hidden="true"></div>
+        <div class="pose-display-info">
+          <p class="pose-display-difficulty" id="poseDifficulty">Beginner · Hold 20–30s</p>
+          <h3 class="pose-display-name" id="poseName">Tadasana</h3>
+          <p class="pose-display-sanskrit" id="poseSanskrit">Mountain Pose</p>
+          <p class="pose-display-desc" id="poseDesc">Stand tall, feet grounded, arms relaxed by the side. The quiet starting point of every practice.</p>
+          <p class="pose-display-benefit" id="poseBenefit">Builds posture awareness and steady focus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 BENEFITS ============ -->
+  <section class="section benefits" id="benefits">
+    <div class="section-head light">
+      <span class="section-num">04 — Why it works</span>
+      <h2 class="section-title reveal-up">Eight reasons <em>it stays with them.</em></h2>
+    </div>
+
+    <div class="benefits-stage">
+      <div class="benefits-center">
+        <span class="benefits-center-word" id="benefitCenterWord">Focus</span>
+        <p class="benefits-center-desc" id="benefitCenterDesc">Encourages concentration and quiet awareness.</p>
+      </div>
+      <div class="benefits-orbit" id="benefitsOrbit"><!-- injected --></div>
+    </div>
+  </section>
+
+  <!-- ============ 05 CLASS JOURNEY / EXPERIENCE ============ -->
+  <section class="section journey" id="experience">
+    <div class="section-head">
+      <span class="section-num">05 — Inside a class</span>
+      <h2 class="section-title reveal-up">Forty-five minutes, <em>five stages.</em></h2>
+    </div>
+
+    <div class="journey-track" id="journeyTrack">
+      <div class="journey-stage" data-stage="1">
+        <span class="journey-index">01</span>
+        <h3>Arrive</h3>
+        <p>Screens off, mats out. The outside world stays outside for the next forty-five minutes.</p>
+      </div>
+      <div class="journey-stage" data-stage="2">
+        <span class="journey-index">02</span>
+        <h3>Breathe</h3>
+        <p>A few slow rounds of breath bring attention back into the body, gently.</p>
+      </div>
+      <div class="journey-stage" data-stage="3">
+        <span class="journey-index">03</span>
+        <h3>Move</h3>
+        <p>Poses are learned one at a time, with plenty of room to wobble and try again.</p>
+      </div>
+      <div class="journey-stage" data-stage="4">
+        <span class="journey-index">04</span>
+        <h3>Rest</h3>
+        <p>A short stillness at the end lets everything that was practised settle in.</p>
+      </div>
+      <div class="journey-stage" data-stage="5">
+        <span class="journey-index">05</span>
+        <h3>Reset</h3>
+        <p>Class ends. What stays is a calmer child, ready for whatever's next.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 INSTRUCTORS ============ -->
+  <section class="section instructors" id="instructors">
+    <div class="section-head light">
+      <span class="section-num">06 — Taught by</span>
+      <h2 class="section-title reveal-up">Two therapists, <em>one practice.</em></h2>
+    </div>
+
+    <div class="instructor-grid">
+      <article class="instructor-card reveal-up">
+        <div class="instructor-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="34" r="14"/><path d="M50 50 C25 55 18 78 18 90 L82 90 C82 78 75 55 50 50Z"/></svg>
+        </div>
+        <h3>Mrs. Vaishnavi</h3>
+        <p class="instructor-role">Yoga Therapist</p>
+        <p class="instructor-bio">Leads the movement, breath and pose work at the centre of every session — patient with beginners, precise on form.</p>
+      </article>
+
+      <article class="instructor-card reveal-up">
+        <div class="instructor-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="34" r="14"/><path d="M50 50 C25 55 18 78 18 90 L82 90 C82 78 75 55 50 50Z"/></svg>
+        </div>
+        <h3>Mrs. Rani Mai</h3>
+        <p class="instructor-role">Acupuncture Therapist</p>
+        <p class="instructor-bio">Brings a wider wellness lens to the programme, supporting the children's course alongside Mindful Movement's therapy practice.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 07 CLASS INFO ============ -->
+  <section class="section class-info" id="class">
+    <div class="section-head">
+      <span class="section-num">07 — Join a class</span>
+      <h2 class="section-title reveal-up">Everything you <em>need to know.</em></h2>
+    </div>
+
+    <div class="class-card">
+      <div class="class-card-main">
+        <p class="class-card-name">Joyful Yoga for Children</p>
+        <p class="class-card-tag">A joyful journey towards a healthy body, calm mind &amp; confident child.</p>
+
+        <div class="class-detail-grid">
+          <div class="cd-item"><span class="cd-label">Starting</span><span class="cd-value">September 2nd onwards</span></div>
+          <div class="cd-item"><span class="cd-label">Time</span><span class="cd-value">5:30 PM – 6:15 PM</span></div>
+          <div class="cd-item"><span class="cd-label">Age</span><span class="cd-value">6 – 14 years</span></div>
+          <div class="cd-item"><span class="cd-label">Platform</span><span class="cd-value">Online · Google Meet</span></div>
+        </div>
+      </div>
+
+      <div class="class-card-price">
+        <span class="cp-label">Monthly fee</span>
+        <span class="cp-amount">₹750</span>
+        <a href="#contact" class="btn-primary btn-magnetic" data-hover>
+          <span class="btn-text">Reserve a spot</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 FINAL CTA ============ -->
+  <section class="section final-cta" id="contact">
+    <div class="final-cta-inner">
+      <p class="fc-eyebrow reveal-up">Let your child learn, move, breathe and grow</p>
+      <h2 class="fc-title reveal-up">Healthy body.<br>Calm mind.<br><em>Happy child.</em></h2>
+
+      <div class="fc-contact reveal-up">
+        <a href="tel:+917845622033" class="fc-phone btn-magnetic" data-hover>78456&#8209;22033</a>
+        <a href="tel:+917094655781" class="fc-phone btn-magnetic" data-hover>70946&#8209;55781</a>
+      </div>
+      <p class="fc-note reveal-up">Call or WhatsApp to reserve your child's place — classes run in small live groups.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="26" height="26">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="20" cy="14" r="4" fill="currentColor"/>
+            <path d="M20 18 C12 22, 10 30, 10 34 L30 34 C30 30, 28 22, 20 18 Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>Mindful Movement</span>
+      </div>
+      <p class="footer-tag">Pause. Breathe. Heal.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#about">About</a>
+      <a href="#poses">Poses</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#experience">Experience</a>
+      <a href="#class">Class</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Mindful Movement. Educational content only — not medical advice.</p>
+      <p class="footer-portfolio">Design &amp; build — portfolio project</p>
+    </div>
+  </footer>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
